@@ -1,31 +1,30 @@
-title: jekyll-rtd-theme
-description: Just another documentation theme compatible with GitHub Pages
+title: Cayman Blog Theme
+description: Cayman Blog Theme is a clean, responsive blogging theme for Jekyll and Gitlab/GitHub Pages.
+show_downloads: true
 
-theme: null
+baseurl: "/cayman-blog" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
+url: "https://lorepirri.github.io" # change this to the base hostname & protocol for your site
 
-# debug:
-#   compress: true
-#   dist: false
-#   shortcodes: true
 
-readme_index:
-  with_frontmatter: true
+google_analytics:
+
+# cayman-blog date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+cayman-blog:
+  date_format: "%b %-d, %Y"
+
+theme: # leave it empty
+
+# social
+author: lorepirri
+image: /thumbnail-jumbo.png
+twitter:
+  username: lorepirri
 
 plugins:
-  - jemoji
-  - jekyll-avatar
-  - jekyll-mentions
+  - jekyll-target-blank
 
-exclude:
-  - Makefile
-  - CNAME
-  - LICENSE
-  - update.sh
-  - Gemfile
-  - Gemfile.lock
-  - requirements.txt
-  - node_modules
-  - package.json
-  - package-lock.json
-  - webpack.config.js
-  - jekyll-rtd-theme.gemspec
+target-blank:
+    rel: nofollow
+
+header_page_refs: ['now', 'about', 'contact']
