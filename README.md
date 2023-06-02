@@ -1,108 +1,84 @@
-> Ported Theme of [Hux Blog](https://github.com/Huxpro/huxpro.github.io), Thank [Huxpro](https://github.com/Huxpro) for designing such a flawless theme.
-> 
-> This BeanTech theme created by [YuHsuan](http://beantech.org) modified from the original Porter [Kaijun](http://kaijun.rocks/hexo-theme-huxblog/)
+# Jekyll-Jacman
 
-# [Live Demo](http://beantech.org)
-![BeanTech Desktop](http://beantech.org/img/beantech-desktop.png)
+**中文 | [English](/README_en.md)**
 
-# Usage
-I publish the whole project for your convenience, so you can just follow the instruction down below, then you can easily customiz your own blog!
+Jekyll-Jacman 是为 [Jekyll](http://jekyllrb.com) 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman 始于 [Hexo Jacman](https://github.com/wuchong/jacman) 移植而来。
 
-Let's begin!!!
+ * [主题演示](http://simpleyyt.github.io/jekyll-jacman/)
+ * [如何使用 Jacman 主题](http://simpleyyt.github.io/jekyll-jacman/jekyll/2015/09/20/how-to-use-jacman)
 
-## Init
-```bash
-git clone https://github.com/YenYuHsuan/hexo-theme-beantech.git ./hexo-beantech
-cd hexo-beantech
-npm install
+## 本地搭建
+
+确保已安装`Ruby 2.1.0` 或更高版本：
+
+```sh
+ruby --version
 ```
 
-## Modify
-Modify `_config.yml` file with your own info.
-Especially the section:
-### Deployment
-Replace to your own repo!
-```yml
-deploy:
-  type: git
-  repo: https://github.com/<yourAccount>/<repo>
-  branch: <your-branch>
+安装`Bundler`：
+
+```sh
+gem install bundler
 ```
 
-### Sidebar settings
-Copy your avatar image to `<root>/img/` and modify the `_config.yml`:
-```yml
-sidebar: true    # whether or not using Sidebar.
-sidebar-about-description: "<your description>"
-sidebar-avatar: img/<your avatar path>
-```
-and activate your personal widget you like
-```yml
-widgets:         # here are widget you can use, you can comment out
-- featured-tags
-- short-about
-- recent-posts
-- friends-blog
-- archive
-- category
-```
-if you want to add sidebar widget, please add at `layout/_widget`.
-### Signature Setup
-Copy your signature image to `<root>/img/signature` and modify the `_config.yml`:
-```yml
-signature: true   # show signature
-signature-img: img/signature/<your-signature-ID>
-```
-### Go to top icon Setup
-My icon is using iron man, you can change to your own icon at `css/image`.
+下载 Jacman 主题：
 
-### Post tag
-You can decide to show post tags or not.
-```yml
-home_posts_tag: true
-```
-![home_posts_tag-true](./source/_posts/hexo-theme-beantech/home_posts_tag-true.png)
-```yml
-home_posts_tag: false
-```
-![home_posts_tag-false](./source/_posts/hexo-theme-beantech/home_posts_tag-false.png)
-
-### Markdown render
-My markdown render engine plugin is [hexo-renderer-markdown-it](https://github.com/celsomiranda/hexo-renderer-markdown-it).
-```yml
-# Markdown-it config
-## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
-markdown:
-  render:
-    html: true
-    xhtmlOut: false
-    breaks: true
-    linkify: true
-    typographer: true
-    quotes: '“”‘’'
-```
-and if you want to change the header anchor 'ℬ', you can go to `layout/post.ejs` to change it.
-```javascript
-async("//cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
-        anchors.options = {
-          visible: 'hover',
-          placement: 'left',
-          icon: 'ℬ'
-        };
-        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-    })
+```sh
+git clone https://github.com/Simpleyyt/jekyll-jacman.git
+cd jekyll-jacman
 ```
 
-## Hexo Basics
-Some hexo command:
-```bash
-hexo new post "<post name>" # you can change post to another layout if you want
-hexo clean && hexo generate # generate the static file
-hexo server # run hexo in local environment
-hexo deploy # hexo will push the static files automatically into the specific branch(gh-pages) of your repo!
+安装依赖：
+
+```sh
+bundle install
 ```
 
-# Have fun ^_^ 
+运行 Jekyll：
 
-Please [Star](https://github.com/YenYuHsuan/hexo-theme-beantech) this Project if you like it! [Follow](https://github.com/YenYuHsuan) would also be appreciated!
-Peace!
+```sh
+bundle exec jekyll server
+```
+
+更多细节可以参考：[Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
+
+## 功能
+
+- **菜单 menu**  
+ 主导航菜单
+- **控件 widget**  
+ 侧边栏的控件。包括：Github 名片	、分类、标签、RSS、友情链接、微博秀。
+- **图片相关 Image**  
+ 设置网站图标、网站logo、作者头像、博客顶部大图等。还提供了多种图片样式`img-logo`,`img-topic`,`img-center`等。
+- **首页模式 index**  
+ 主题提供了两种首页展示模式。
+- **作者 author**  
+ 作者信息，主要用于展示网站右下角的社交网络链接。包括：微博、豆瓣、知乎、邮箱、GitHub、StackOverflow、Twitter、Facebook、Linkedin、Google+。
+- **目录 toc**  
+ 在文章中和侧边栏可以显示目录。
+- **评论 comments**  
+ 支持 [多说](http://duoshuo.com/) & [disqus](https://disqus.com/) 评论。
+- **分享 jiathis**  
+ 启用 内建分享工具 或 [加网](http://www.jiathis.com/) 分享系统。
+- **网站统计 Analytiscs**  
+ 支持 [谷歌统计](http://www.google.com/analytics/) & [百度统计](http://tongji.baidu.com/) & [CNZZ站长统计](http://www.cnzz.com/)。
+- **Search**  
+ 支持 [谷歌自定义搜索](https://www.google.com/cse/ ) & [百度站内搜索](http://zn.baidu.com/)  &[微搜索](http://tinysou.com/)。 &[Simple Jekyll Search](https://github.com/christian-fei/Simple-Jekyll-Search)
+- **totop**  
+ 回到顶部。
+- **rss**  
+ RSS 订阅链接。
+- **fancybox**  
+ 图片查看的 [Fancybox](http://fancyapps.com/fancybox/) 工具。
+- **其他**
+ 你可以设置侧边栏在博文页面中不显示。
+
+## 协议
+
+[MIT](/LICENSE)
+
+## 捐赠
+
+支付宝捐赠链接还是要有的，万一真的有人捐呢。
+
+![支付宝扫码捐赠](http://p1.bpimg.com/567571/9a4a158daee8aa69.png)
